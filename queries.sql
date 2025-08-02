@@ -53,7 +53,7 @@ WHERE r.user_id IN (SELECT user_id FROM similar_users)
 -- 4. Trending Now: Most Rated Movies in the Past Month
 SELECT m.title, COUNT(r.rating_id) AS num_ratings
 FROM Ratings r
-JOIN Movies m ON r.movie_id = m.movie_id
+JOIN Movies m ON r.movie_id = r.movie_id
 WHERE r.rating_date >= CURRENT_DATE - INTERVAL '30 days'
 GROUP BY m.title
 ORDER BY num_ratings DESC
@@ -68,4 +68,4 @@ LEFT JOIN Movie_Tags mt ON m.movie_id = mt.movie_id
 LEFT JOIN Tags t ON mt.tag_id = t.tag_id
 WHERE m.title ILIKE '%Quest%'
    OR g.genre_name ILIKE '%Quest%'
-   OR t.tag_name ILIKE '%Quest%'; 
+   OR t.tag_name ILIKE '%Quest%';
