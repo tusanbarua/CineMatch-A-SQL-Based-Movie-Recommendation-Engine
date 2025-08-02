@@ -1,127 +1,81 @@
 # CineMatch: A SQL-Based Movie Recommendation Engine
 
-[![PostgreSQL](https://img.shields.io/badge/Database-PostgreSQL-blue)](https://www.postgresql.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+CineMatch is a dynamic, user-driven movie discovery platform that allows users to explore, rate, and contribute to a growing database of films. It features a modern, responsive interface and a powerful admin panel for managing content. This project is designed to showcase a full-stack web application built with Python, Flask, and PostgreSQL, demonstrating a strong understanding of database management, web development, and user-centric design.
 
----
+## Why CineMatch?
 
-## 🎬 Project Overview
-CineMatch is a SQL-powered movie recommendation system that demonstrates strong relational database and analytics skills. It stores movie data, user preferences, watch history, ratings, genres, and tags, and uses SQL queries to generate recommendations and insights.
+In a world saturated with content, finding the right movie can be a challenge. CineMatch solves this by providing a community-driven platform where users can:
 
----
+*   **Discover new films:** Search and filter through an extensive collection of movies.
+*   **Get reliable ratings:** See how other users have rated films to make informed decisions.
+*   **Contribute to the community:** Submit new movies to the database and help it grow.
 
-## 🗂️ Database Schema
-- **Users**: Stores user info
-- **Movies**: Movie details
-- **Genres**: Movie genres
-- **Ratings**: User ratings for movies
-- **Tags**: Descriptive tags for movies
-- **Movie_Tags**: Many-to-many relationship between movies and tags
+This project is not just a movie database; it's a demonstration of how to build a scalable, maintainable, and user-friendly web application from the ground up.
 
-See [`schema.sql`](schema.sql) for full table definitions.
+## Features
 
----
+*   **Modern, Responsive UI:** Built with Tailwind CSS for a clean, professional look on any device.
+*   **Dynamic Search:** Instantly find movies by title, genre, or tags.
+*   **User Submissions:** A simple form allows users to add new movies to the database.
+*   **Admin Approval System:** A dedicated admin panel allows for the approval or rejection of user-submitted movies, ensuring data quality.
+*   **Statistical Dashboard:** The admin panel provides at-a-glance statistics on the movie database.
+*   **RESTful API:** The backend is built with Flask, providing a clean and organized API for managing data.
 
-## 🔍 Features
-- Top rated movies by genre
-- Personalized recommendations
-- "Users like you also watched" analytics
-- Trending movies
-- Search by title, genre, or tag
+## Technical Stack
 
----
+*   **Backend:** Python, Flask
+*   **Database:** PostgreSQL
+*   **Frontend:** HTML, Tailwind CSS, JavaScript
+*   **Database Connector:** psycopg2
 
-## 🛠️ Tools
-- **PostgreSQL** (default, but can be adapted for MySQL)
-- (Optional) Python for scripting/visualization
+## Getting Started
 
----
+To get a local copy up and running, follow these simple steps.
 
-## 🚀 Getting Started
+### Prerequisites
 
-### 1. Install PostgreSQL
-[Download PostgreSQL](https://www.postgresql.org/download/)
+*   Python 3.x
+*   PostgreSQL
 
-### 2. Create a database
-```sh
-createdb cinematch
-```
+### Installation
 
-### 3. Run the schema and sample data scripts
-```sh
-psql -d cinematch -f schema.sql
-psql -d cinematch -f sample_data.sql
-```
+1.  **Clone the repo**
+    ```sh
+    git clone https://github.com/your_username/CineMatch.git
+    cd CineMatch
+    ```
+2.  **Install Python packages**
+    ```sh
+    pip install -r requirements.txt
+    ```
+3.  **Set up the database**
+    *   Create a new PostgreSQL database named `cinematch`.
+    *   Update the database connection settings in `app.py` if necessary.
+    *   Run the `schema.sql` file to create the necessary tables.
+        ```sh
+        psql -U your_username -d cinematch -f schema.sql
+        ```
 
-### 4. Try out the example queries
-```sh
-psql -d cinematch -f queries.sql
-```
+### Running the Application
 
----
+1.  **Start the Flask server**
+    ```sh
+    python app.py
+    ```
+2.  **Access the application**
+    *   Main site: `http://127.0.0.1:5000`
+    *   Admin panel: `http://127.0.0.1:5000/admin`
 
-## 🧪 Advanced Ideas
-- Predict genre preferences
-- Triggers for favorite genre
-- Views for reporting
+## Contributing
 
----
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-## 🤖 Testing Your Project
+1.  Fork the Project
+2.  Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3.  Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4.  Push to the Branch (`git push origin feature/AmazingFeature`)
+5.  Open a Pull Request
 
-You can check your project manually or with a Python script:
+## License
 
-### Manual Check
-1. Open your terminal.
-2. Run:
-   ```sh
-   psql -d cinematch -f schema.sql
-   psql -d cinematch -f sample_data.sql
-   psql -d cinematch -f queries.sql
-   ```
-3. Review the output for errors or unexpected results.
-
-### Python Test Script (Optional)
-If you want a Python script to automate testing, let us know! You’ll need to provide:
-- Your PostgreSQL username (default is usually `postgres`)
-- If your database requires a password (can be set in the script or via environment variables)
-
----
-
-## 📄 License
-This project is licensed under the [MIT License](LICENSE).
-
----
-
-**Enjoy exploring CineMatch!** 
-
----
-
-### ✅ **GitHub-Ready Improvements**
-- **README.md**: Polished, with badges, clear sections, and GitHub-friendly formatting.
-- **.gitignore**: Added to keep your repo clean (ignores Python, PostgreSQL, and OS-specific files).
-- **LICENSE**: MIT License included for open source use.
-- **All SQL files**: Well-organized and documented.
-
----
-
-### 📦 **How to Publish on GitHub**
-1. **Initialize a git repo** (if you haven’t already):
-   ```sh
-   git init
-   git add .
-   git commit -m "Initial commit: CineMatch SQL Movie Recommendation Engine"
-   ```
-2. **Create a new repo on GitHub** (via the website).
-3. **Connect your local repo to GitHub**:
-   ```sh
-   git remote add origin https://github.com/yourusername/cinematch.git
-   git branch -M main
-   git push -u origin main
-   ```
-
----
-
-**You can now share your CineMatch project with the world!**
-
-Would you like a **Python test script** included in the repo, or any other enhancements before you publish? 
+Distributed under the MIT License. See `LICENSE` for more information.
